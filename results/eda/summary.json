@@ -1,0 +1,21 @@
+{
+  "source": "C:\\Users\\sreeh\\Documents\\GitHub\\PATHSNAP\\Student folder",
+  "partitions": {
+    "student_test": {
+      "trips": 10,
+      "gps_observations": 19160,
+      "invalid_gps_observations": 0,
+      "one_second_fraction": 0.9862140992167102,
+      "trips_with_time_gaps": 6,
+      "trips_with_non_increasing_time": 0
+    },
+    "train": {
+      "trips": 80,
+      "gps_observations": 208417,
+      "invalid_gps_observations": 0,
+      "one_second_fraction": 0.96503741534149,
+      "trips_with_time_gaps": 60,
+      "trips_with_non_increasing_time": 0
+    }
+  }
+}
