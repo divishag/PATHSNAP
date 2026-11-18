@@ -1,0 +1,23 @@
+# Run commands from the repository root. Fill the feature names after handoff.
+seed: 42
+folds: 5
+# 0 = raw probabilities. Use >=2 to compare grouped sigmoid calibration.
+calibration_folds: 0
+expected_trips:
+  train: 80
+  student_test: 10
+train_candidates: data/processed/train_candidates.csv
+train_observations: data/processed/train_observations.csv
+student_test_candidates: data/processed/student_test_candidates.csv
+student_test_observations: data/processed/student_test_observations.csv
+features: []
+feature_units: {}
+models:
+  - logistic_regression
+  - weighted_knn
+  - random_forest
+  - hist_gradient_boosting
+  - mlp
+parameters: {}
+experiment_dir: results/experiments
+artifact_dir: artifacts

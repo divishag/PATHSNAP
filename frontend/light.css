@@ -1,0 +1,50 @@
+/* Loaded after the dark stylesheet only when the user selects light mode. */
+:root { color-scheme: light; }
+.stApp {
+  color: #172735;
+  --text-color: #172735;
+  --background-color: #f6f9fc;
+  --secondary-background-color: #e8f0f6;
+  --st-text-color: #172735;
+  --st-background-color: #f6f9fc;
+  --st-secondary-background-color: #e8f0f6;
+  background: radial-gradient(ellipse at 95% 12%, #a7d1e255, transparent 48%),
+              radial-gradient(ellipse at 0% 80%, #c6def655, transparent 45%), #f6f9fc;
+}
+.stApp [data-testid="stMarkdownContainer"], .stApp label,
+.stApp [data-testid="stWidgetLabel"], .stApp [data-testid="stExpander"] summary { color: #172735; }
+.stApp [data-testid="stCaptionContainer"] { color: #506778; }
+.ps-nav { border-color: #17395325; }
+.ps-brand span, .ps-empty .ps-symbol { color: #1258a2; }
+.ps-nav-links { color: #506778; }
+.ps-nav a:hover { color: #1258a2; }
+.ps-nav-tag { color: #365267; border-color: #17395330; }
+.ps-hero { border-color: #17395318; }
+.ps-badge { color: #365267; border-color: #17395320; background: #ffffff90; }
+.ps-badge::before { background: #1258a2; box-shadow: 0 0 10px #1258a255; }
+.ps-hero h1 { color: #10293e; }
+.ps-hero p { color: #506778; }
+.ps-hero .ps-note { color: #5d7486; }
+.ps-actions a { color: #173953; border-color: #17395330; }
+.ps-actions a:first-child { color: #fff; background: #102d48; border-color: #102d48; }
+.ps-art::after { background: linear-gradient(0deg, #f6f9fc, transparent 90%); }
+.ps-section h2 { color: #172735; }
+.ps-section span { color: #506778; }
+.ps-empty { background: linear-gradient(135deg, #e7f0f8, #ffffff); border-color: #17395320; }
+.ps-empty h3 { color: #172735; }
+.ps-empty p { color: #506778; }
+.ps-footer { color: #506778; border-color: #17395325; }
+.stApp [data-testid="stExpander"] { background: #ffffffb0; border-color: #17395320; }
+.stApp [data-testid="stExpander"] summary { background: #eef4f9; color: #172735; }
+.stApp [data-testid="stCaptionContainer"] p { color: #506778; }
+.stApp [data-testid="stTextInputRootElement"], .stApp [data-baseweb="select"] > div,
+.stApp [data-baseweb="input"], .stApp input { background: #fff; color: #172735; border-color: #17395330; }
+.stApp [data-baseweb="select"] span { color: #172735; }
+.stApp [data-testid="stButton"] button, .stApp [data-testid="stDownloadButton"] button { background: #fff; color: #172735; border-color: #17395330; }
+.stApp [data-testid="stButton"] button p, .stApp [data-testid="stDownloadButton"] button p { color: inherit; }
+.stApp [data-testid="stButton"] button[kind="primary"] { background: #102d48; color: #fff; border-color: #102d48; }
+.stApp [data-testid="stMetric"] { background: #fff; border-color: #17395320; }
+.stApp [data-testid="stMetricLabel"] { color: #506778; }
+.stApp [data-testid="stMetricValue"] { color: #172735; }
+[data-baseweb="popover"] [role="listbox"], [data-baseweb="popover"] [role="option"] { background: #fff; color: #172735; }
+.stApp [data-testid="stAlert"] { color: #172735; background: #e1edf8; }

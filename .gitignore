@@ -45,3 +45,7 @@ results/experiments/*
 
 # Local logs
 *.log
+
+# Generated handoff archive and large feature tables
+handoff/*.zip
+data/processed/
