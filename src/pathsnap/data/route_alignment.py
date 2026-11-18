@@ -35,9 +35,20 @@ def align_reference_route(trip, skip_penalty=0.5,
     if (route_ids < 0).any() or (route_ids >= len(arcs)).any():
         raise ValueError("Reference route contains invalid arc IDs")
 
-    # Local metric coordinate system appropriate for this dataset
+    # Use a metric projection centred on each individual trip.
+    # Trips may be located in different countries or UTM zones.
+    from pyproj import CRS
+
+    lon0 = float(track["longitude"].median())
+    lat0 = float(track["latitude"].median())
+
+    local_crs = CRS.from_proj4(
+        f"+proj=aeqd +lat_0={lat0} +lon_0={lon0} "
+        "+datum=WGS84 +units=m +no_defs"
+    )
+
     transformer = Transformer.from_crs(
-        "EPSG:4326", "EPSG:32632", always_xy=True
+        "EPSG:4326", local_crs, always_xy=True
     )
 
     gps = np.column_stack(transformer.transform(
