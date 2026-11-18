@@ -1,0 +1,7 @@
+# Laptop 1 FastAPI server
+host: 0.0.0.0
+port: 8000
+model_path: artifacts/final/model.joblib
+# Trip folder served by GET /trips; override at demo time with the
+# PATHSNAP_TRIP_ROOT environment variable (evaluator-testing folder).
+default_trip_root: Student folder/student_test

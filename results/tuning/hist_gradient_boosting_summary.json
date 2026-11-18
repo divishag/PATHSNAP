@@ -1,0 +1,133 @@
+{
+  "model": "hist_gradient_boosting",
+  "method": "Gaussian-process Bayesian optimisation, expected improvement, 5 random start-up trials",
+  "objective": "mean observation Top-1 accuracy, 3-fold GroupKFold over the 80 training trips",
+  "search_space": {
+    "learning_rate": [
+      "log",
+      -2,
+      -0.5228787452803376
+    ],
+    "max_leaf_nodes": [
+      "int",
+      15,
+      63
+    ],
+    "min_samples_leaf": [
+      "int",
+      10,
+      200
+    ],
+    "l2_regularization": [
+      "log",
+      -4,
+      1
+    ],
+    "max_iter": [
+      "int",
+      100,
+      300
+    ],
+    "class_weight": [
+      "choice",
+      [
+        null,
+        "balanced"
+      ],
+      null
+    ]
+  },
+  "fixed_parameters": {
+    "early_stopping": false
+  },
+  "trials": 10,
+  "seed": 42,
+  "best_trial": 1,
+  "best_parameters": {
+    "early_stopping": false,
+    "learning_rate": 0.08018990673181141,
+    "max_leaf_nodes": 46,
+    "min_samples_leaf": 157,
+    "l2_regularization": 0.004283414119944455,
+    "max_iter": 284,
+    "class_weight": "balanced"
+  },
+  "untuned_parameters": {
+    "early_stopping": false
+  },
+  "untuned_cv": {
+    "cv_top1_accuracy": 0.9277716465626707,
+    "cv_top1_std": 0.0008438436491576835,
+    "cv_macro_f1": 0.9419499279067344,
+    "fold_top1": [
+      0.9265827456125963,
+      0.9284555065143862,
+      0.9282766875610294
+    ]
+  },
+  "tuned_cv": {
+    "cv_top1_accuracy": 0.9281013313582759,
+    "cv_top1_std": 0.001299648590915561,
+    "cv_macro_f1": 0.9452260314449751,
+    "fold_top1": [
+      0.9265007380679022,
+      0.9296840636422927,
+      0.9281191923646329
+    ]
+  },
+  "untuned_student_test": {
+    "candidate_accuracy": 0.9632481127089431,
+    "candidate_macro_precision": 0.9041322136195864,
+    "candidate_macro_recall": 0.9670923568346721,
+    "candidate_macro_f1": 0.9319125038898561,
+    "candidate_log_loss": 0.09277779674752215,
+    "candidate_brier_score": 0.0272504659702445,
+    "candidate_confusion_matrix": [
+      [
+        104055,
+        4149
+      ],
+      [
+        510,
+        18055
+      ]
+    ],
+    "top1_accuracy": 0.9188767550702028,
+    "candidate_miss_rate": 0.001291086126203669,
+    "labelled_observations": 18589,
+    "unlabelled_observations": 571,
+    "candidate_rows": 130919,
+    "route_continuity": null,
+    "route_continuity_note": "N/A: requires Laptop 1 road graph and agreed transition definition.",
+    "inference_time_ms": 379.279649999944
+  },
+  "tuned_student_test": {
+    "candidate_accuracy": 0.9657092822377711,
+    "candidate_macro_precision": 0.9100959931404673,
+    "candidate_macro_recall": 0.9681770940533141,
+    "candidate_macro_f1": 0.9360349515204451,
+    "candidate_log_loss": 0.08653023887726974,
+    "candidate_brier_score": 0.025521811625757063,
+    "candidate_confusion_matrix": [
+      [
+        104383,
+        3821
+      ],
+      [
+        526,
+        18039
+      ]
+    ],
+    "top1_accuracy": 0.9188229598149443,
+    "candidate_miss_rate": 0.001291086126203669,
+    "labelled_observations": 18589,
+    "unlabelled_observations": 571,
+    "candidate_rows": 130919,
+    "route_continuity": null,
+    "route_continuity_note": "N/A: requires Laptop 1 road graph and agreed transition definition.",
+    "inference_time_ms": 636.9825080000737
+  },
+  "untuned_fit_time_s": 18.527137312999912,
+  "tuned_fit_time_s": 29.725238547999993,
+  "total_search_time_s": 640.7208759209999
+}

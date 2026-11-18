@@ -1,4 +1,4 @@
-# Run commands from the repository root. Fill the feature names after handoff.
+# Run commands from the repository root. Features = v2 set in src/pathsnap/features/engineering.py
 seed: 42
 folds: 5
 # 0 = raw probabilities. Use >=2 to compare grouped sigmoid calibration.
@@ -10,7 +10,28 @@ train_candidates: data/processed/train_candidates.csv
 train_observations: data/processed/train_observations.csv
 student_test_candidates: data/processed/student_test_candidates.csv
 student_test_observations: data/processed/student_test_observations.csv
-features: []
+features:
+  - distance_to_arc_m
+  - distance_delta_m
+  - distance_ratio
+  - distance_rank_tied
+  - projection_fraction
+  - endpoint_overshoot_m
+  - arc_length_m
+  - align_cos_w2
+  - align_cos_w5
+  - align_cos_w10
+  - align_cos_delta_w5
+  - along_track_w5_m
+  - heading_difference_deg
+  - context_dist_w3_m
+  - context_dist_w10_m
+  - context_dist_delta_w10_m
+  - speed_mps
+  - time_gap_s
+  - n_candidates
+  - has_twin_candidate
+  - to_node_out_degree
 feature_units: {}
 models:
   - logistic_regression

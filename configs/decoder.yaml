@@ -1,0 +1,10 @@
+# HMM / Viterbi decoder settings (src/pathsnap/decoding)
+# hidden state  : candidate road arc of a GPS observation
+# emission      : log P(match) from the selected classifier
+# transition    : road-network shortest-path distance vs GPS distance, scale beta_m
+beta_m: 200.0   # sweep 20/50/100/200 on student-test, results/decoder/beta_sweep.csv
+candidate_k: 8
+candidate_search_radius_m: 100.0
+# Noise-aware transitions (results/decoder/hmm_fix.csv):
+backtrack_tolerance_m: 15.0   # backward jitter on the same arc treated as GPS noise
+uturn_penalty: 6.0            # log-score cost of switching to the reverse twin arc

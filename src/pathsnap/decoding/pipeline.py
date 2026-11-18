@@ -12,7 +12,7 @@ def decode_trip(
     trip,
     candidates,
     probability_column="match_probability",
-    beta_m=50.0,
+    beta_m=200.0,  # chosen by scripts/tune_decoder.py sweep (results/decoder/)
 ):
     """Decode candidate probabilities into a sequence of road arcs.
 
@@ -134,7 +134,29 @@ def decode_trip(
             if not np.isfinite(matrix).any():
                 flush_segment()
             else:
-                pending_transitions.append(matrix)
+                # A locally possible transition may still be
+                # unreachable from the start of the current segment.
+                # Check the accumulated Viterbi state before extending.
+                scores = pending_emissions[0].copy()
+
+                for step, previous_matrix in enumerate(
+                    pending_transitions
+                ):
+                    combined = scores[:, None] + previous_matrix
+                    scores = (
+                        pending_emissions[step + 1]
+                        + np.max(combined, axis=0)
+                    )
+
+                next_scores = (
+                    emissions
+                    + np.max(scores[:, None] + matrix, axis=0)
+                )
+
+                if not np.isfinite(next_scores).any():
+                    flush_segment()
+                else:
+                    pending_transitions.append(matrix)
 
         pending_groups.append(group)
         pending_emissions.append(emissions)

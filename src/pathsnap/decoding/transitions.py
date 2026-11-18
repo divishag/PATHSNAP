@@ -10,11 +10,16 @@ from scipy.sparse.csgraph import dijkstra
 class RoadTransitionModel:
     """Compute network-aware transitions between candidate road arcs."""
 
-    def __init__(self, trip, beta_m=50.0):
+    def __init__(self, trip, beta_m=50.0, backtrack_tolerance_m=15.0, uturn_penalty=6.0):
         if not np.isfinite(beta_m) or beta_m <= 0:
             raise ValueError("beta_m must be positive and finite")
 
         self.beta_m = float(beta_m)
+        # GPS noise can move consecutive fixes slightly backwards along the
+        # same arc; treat that as noise instead of a loop around the network.
+        self.backtrack_tolerance_m = float(backtrack_tolerance_m)
+        # Log-score cost of switching to the reverse-direction twin arc.
+        self.uturn_penalty = float(uturn_penalty)
         self.track = trip["track"]
         self.nodes = trip["nodes"]
         self.arcs = trip["arcs"]
@@ -142,6 +147,11 @@ class RoadTransitionModel:
                 * self.lengths[prev_arc]
             )
 
+        if prev_arc == curr_arc:
+            backwards = (prev_fraction - curr_fraction) * self.lengths[prev_arc]
+            if backwards <= self.backtrack_tolerance_m:
+                return float(backwards)
+
         remaining_previous = (
             (1.0 - prev_fraction) * self.lengths[prev_arc]
         )
@@ -187,6 +197,11 @@ class RoadTransitionModel:
         if not np.isfinite(network_distance):
             return float("-inf")
 
-        return float(
-            -abs(network_distance - gps_distance) / self.beta_m
-        )
+        score = -abs(network_distance - gps_distance) / self.beta_m
+
+        prev_arc, curr_arc = int(previous_arc_id), int(current_arc_id)
+        if (self.from_nodes[curr_arc] == self.to_nodes[prev_arc]
+                and self.to_nodes[curr_arc] == self.from_nodes[prev_arc]):
+            score -= self.uturn_penalty
+
+        return float(score)

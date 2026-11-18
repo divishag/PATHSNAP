@@ -1,0 +1,26 @@
+{
+  "selected_model": "hist_gradient_boosting",
+  "model_path": "artifacts/final/model.joblib",
+  "feature_set": "v2 (21 features, see reports/feature_engineering_v2.md)",
+  "cv_top1_accuracy": 0.9241739447365891,
+  "student_test_top1_accuracy": 0.9188767550702028,
+  "student_test_decoded_arc_accuracy": 0.9495938458227984,
+  "previous_v1": {
+    "cv_top1_accuracy": 0.7965018000778553,
+    "student_test_top1_accuracy": 0.8213459572865673,
+    "student_test_decoded_arc_accuracy": 0.843778578729356
+  },
+  "reason": "Highest grouped-CV Top-1 with v2 features; compact artifact; end-to-end HMM/Viterbi evaluated on all 10 student-test trips.",
+  "decoder": {
+    "beta_m": 200.0,
+    "backtrack_tolerance_m": 15.0,
+    "uturn_penalty": 6.0,
+    "source": "results/decoder/beta_sweep.csv, results/decoder/hmm_fix.csv"
+  },
+  "bayesian_tuning": {
+    "untuned_cv_top1": 0.9278,
+    "tuned_cv_top1": 0.9281,
+    "decision": "untuned kept: tuning gain within noise, student-test unchanged",
+    "source": "results/tuning/hist_gradient_boosting_summary.json"
+  }
+}

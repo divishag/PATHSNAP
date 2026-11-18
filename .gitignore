@@ -27,21 +27,19 @@ __MACOSX/
 .mypy_cache/
 .ruff_cache/
 
-# Generated artifacts
-artifacts/*
-!artifacts/.gitkeep
+# Generated artifacts: keep the small trained models in git (deliverable).
+# random_forest.joblib (63 MB) and weighted_knn.joblib (26 MB) exceed
+# comfortable GitHub limits; regenerate with scripts/train_*.py.
+artifacts/laptop1/random_forest.joblib
+artifacts/laptop1/weighted_knn.joblib
 
 # Generated results
 results/metrics/*
 results/plots/*
-results/maps/*
-results/experiments/*
 
 # Keep result directories
 !results/metrics/.gitkeep
 !results/plots/.gitkeep
-!results/maps/.gitkeep
-!results/experiments/.gitkeep
 
 # Local logs
 *.log

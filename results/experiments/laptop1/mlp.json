@@ -1,0 +1,195 @@
+{
+  "model": "mlp",
+  "parameters": {
+    "hidden_layer_sizes": [
+      64,
+      32
+    ],
+    "max_iter": 40,
+    "batch_size": 2048
+  },
+  "features": [
+    "distance_to_arc_m",
+    "distance_delta_m",
+    "distance_ratio",
+    "distance_rank_tied",
+    "projection_fraction",
+    "endpoint_overshoot_m",
+    "arc_length_m",
+    "align_cos_w2",
+    "align_cos_w5",
+    "align_cos_w10",
+    "align_cos_delta_w5",
+    "along_track_w5_m",
+    "heading_difference_deg",
+    "context_dist_w3_m",
+    "context_dist_w10_m",
+    "context_dist_delta_w10_m",
+    "speed_mps",
+    "time_gap_s",
+    "n_candidates",
+    "has_twin_candidate",
+    "to_node_out_degree"
+  ],
+  "seed": 42,
+  "cv_top1_accuracy": 0.9197867796069332,
+  "cv_macro_f1": 0.9332521046420498,
+  "folds": [
+    {
+      "candidate_accuracy": 0.9488071839443172,
+      "candidate_macro_precision": 0.8691854585001788,
+      "candidate_macro_recall": 0.9509673972254211,
+      "candidate_macro_f1": 0.9034701282256069,
+      "candidate_log_loss": 0.13998919755109862,
+      "candidate_brier_score": 0.039402402561038975,
+      "candidate_confusion_matrix": [
+        [
+          135936,
+          7459
+        ],
+        [
+          1058,
+          21918
+        ]
+      ],
+      "top1_accuracy": 0.8943943075321069,
+      "candidate_miss_rate": 0.0031239153071850054,
+      "labelled_observations": 23048,
+      "unlabelled_observations": 18699,
+      "candidate_rows": 232935,
+      "route_continuity": null,
+      "route_continuity_note": "N/A: requires Laptop 1 road graph and agreed transition definition.",
+      "inference_time_ms": 290.40790299995933
+    },
+    {
+      "candidate_accuracy": 0.9571861567082105,
+      "candidate_macro_precision": 0.8920097837265895,
+      "candidate_macro_recall": 0.956268201359608,
+      "candidate_macro_f1": 0.9201804238268252,
+      "candidate_log_loss": 0.11400367547701706,
+      "candidate_brier_score": 0.03242821403234519,
+      "candidate_confusion_matrix": [
+        [
+          219692,
+          9737
+        ],
+        [
+          1747,
+          37055
+        ]
+      ],
+      "top1_accuracy": 0.887086856264412,
+      "candidate_miss_rate": 0.005841660261337433,
+      "labelled_observations": 39030,
+      "unlabelled_observations": 2709,
+      "candidate_rows": 281972,
+      "route_continuity": null,
+      "route_continuity_note": "N/A: requires Laptop 1 road graph and agreed transition definition.",
+      "inference_time_ms": 301.00384200022745
+    },
+    {
+      "candidate_accuracy": 0.9715481447036505,
+      "candidate_macro_precision": 0.931898557285425,
+      "candidate_macro_recall": 0.9743613157420825,
+      "candidate_macro_f1": 0.9513983948638297,
+      "candidate_log_loss": 0.07963057038661184,
+      "candidate_brier_score": 0.022092085970692267,
+      "candidate_confusion_matrix": [
+        [
+          196281,
+          6043
+        ],
+        [
+          871,
+          39812
+        ]
+      ],
+      "top1_accuracy": 0.9386542239685658,
+      "candidate_miss_rate": 0.0009086444007858546,
+      "labelled_observations": 40720,
+      "unlabelled_observations": 1017,
+      "candidate_rows": 250225,
+      "route_continuity": null,
+      "route_continuity_note": "N/A: requires Laptop 1 road graph and agreed transition definition.",
+      "inference_time_ms": 302.8364970000439
+    },
+    {
+      "candidate_accuracy": 0.9716832925968807,
+      "candidate_macro_precision": 0.9197392918689995,
+      "candidate_macro_recall": 0.9755296890402898,
+      "candidate_macro_f1": 0.9449262868748434,
+      "candidate_log_loss": 0.07607361636599792,
+      "candidate_brier_score": 0.021494147509872993,
+      "candidate_confusion_matrix": [
+        [
+          214034,
+          6577
+        ],
+        [
+          687,
+          35229
+        ]
+      ],
+      "top1_accuracy": 0.935802263185698,
+      "candidate_miss_rate": 0.0014179664692634915,
+      "labelled_observations": 35967,
+      "unlabelled_observations": 5450,
+      "candidate_rows": 298885,
+      "route_continuity": null,
+      "route_continuity_note": "N/A: requires Laptop 1 road graph and agreed transition definition.",
+      "inference_time_ms": 360.32362900004955
+    },
+    {
+      "candidate_accuracy": 0.9724896148474642,
+      "candidate_macro_precision": 0.9230101053417139,
+      "candidate_macro_recall": 0.9740754694542979,
+      "candidate_macro_f1": 0.9462852894191434,
+      "candidate_log_loss": 0.07409126816941325,
+      "candidate_brier_score": 0.020520712380428862,
+      "candidate_confusion_matrix": [
+        [
+          233905,
+          6770
+        ],
+        [
+          932,
+          38360
+        ]
+      ],
+      "top1_accuracy": 0.9429962470838827,
+      "candidate_miss_rate": 0.003651485951922102,
+      "labelled_observations": 39436,
+      "unlabelled_observations": 2341,
+      "candidate_rows": 294433,
+      "route_continuity": null,
+      "route_continuity_note": "N/A: requires Laptop 1 road graph and agreed transition definition.",
+      "inference_time_ms": 389.54822100004094
+    }
+  ],
+  "student_test": {
+    "candidate_accuracy": 0.9573870583502275,
+    "candidate_macro_precision": 0.8911444163047967,
+    "candidate_macro_recall": 0.963101239737654,
+    "candidate_macro_f1": 0.9221200124327735,
+    "candidate_log_loss": 0.10577203407875942,
+    "candidate_brier_score": 0.0312477112301685,
+    "candidate_confusion_matrix": [
+      [
+        103337,
+        4867
+      ],
+      [
+        535,
+        18030
+      ]
+    ],
+    "top1_accuracy": 0.906396255850234,
+    "candidate_miss_rate": 0.001291086126203669,
+    "labelled_observations": 18589,
+    "unlabelled_observations": 571,
+    "candidate_rows": 130919,
+    "route_continuity": null,
+    "route_continuity_note": "N/A: requires Laptop 1 road graph and agreed transition definition.",
+    "inference_time_ms": 126.83830000014495
+  }
+}

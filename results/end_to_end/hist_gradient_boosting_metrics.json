@@ -1,0 +1,99 @@
+{
+  "model": "hist_gradient_boosting",
+  "trips_processed": 10,
+  "evaluated_observations": 18589,
+  "correct_observations": 17652,
+  "micro_arc_accuracy": 0.9495938458227984,
+  "trips": [
+    {
+      "trip_id": "00000000",
+      "evaluated_observations": 2452,
+      "correct_observations": 2381,
+      "decoded_observations": 2503,
+      "total_observations": 2503,
+      "elapsed_s": 10.27,
+      "arc_accuracy": 0.9710440456769984
+    },
+    {
+      "trip_id": "00000007",
+      "evaluated_observations": 1219,
+      "correct_observations": 1183,
+      "decoded_observations": 1354,
+      "total_observations": 1354,
+      "elapsed_s": 5.3,
+      "arc_accuracy": 0.970467596390484
+    },
+    {
+      "trip_id": "00000009",
+      "evaluated_observations": 1002,
+      "correct_observations": 931,
+      "decoded_observations": 1049,
+      "total_observations": 1049,
+      "elapsed_s": 4.9,
+      "arc_accuracy": 0.9291417165668663
+    },
+    {
+      "trip_id": "00000040",
+      "evaluated_observations": 2926,
+      "correct_observations": 2840,
+      "decoded_observations": 2995,
+      "total_observations": 2995,
+      "elapsed_s": 21.96,
+      "arc_accuracy": 0.9706083390293917
+    },
+    {
+      "trip_id": "00000052",
+      "evaluated_observations": 262,
+      "correct_observations": 260,
+      "decoded_observations": 262,
+      "total_observations": 262,
+      "elapsed_s": 0.6,
+      "arc_accuracy": 0.9923664122137404
+    },
+    {
+      "trip_id": "00000056",
+      "evaluated_observations": 3888,
+      "correct_observations": 3789,
+      "decoded_observations": 3958,
+      "total_observations": 3958,
+      "elapsed_s": 45.75,
+      "arc_accuracy": 0.9745370370370371
+    },
+    {
+      "trip_id": "00000065",
+      "evaluated_observations": 766,
+      "correct_observations": 688,
+      "decoded_observations": 768,
+      "total_observations": 768,
+      "elapsed_s": 2.45,
+      "arc_accuracy": 0.8981723237597912
+    },
+    {
+      "trip_id": "00000076",
+      "evaluated_observations": 1435,
+      "correct_observations": 1374,
+      "decoded_observations": 1486,
+      "total_observations": 1486,
+      "elapsed_s": 9.25,
+      "arc_accuracy": 0.9574912891986063
+    },
+    {
+      "trip_id": "00000077",
+      "evaluated_observations": 3771,
+      "correct_observations": 3382,
+      "decoded_observations": 3911,
+      "total_observations": 3911,
+      "elapsed_s": 37.22,
+      "arc_accuracy": 0.8968443383717847
+    },
+    {
+      "trip_id": "00000091",
+      "evaluated_observations": 868,
+      "correct_observations": 824,
+      "decoded_observations": 874,
+      "total_observations": 874,
+      "elapsed_s": 3.23,
+      "arc_accuracy": 0.9493087557603687
+    }
+  ]
+}
