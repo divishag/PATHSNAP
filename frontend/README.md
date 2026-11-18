@@ -15,7 +15,7 @@ The default API address can also be set through `PATHSNAP_API_URL`. The Backend 
 
 Use the Light theme toggle to change appearance during the session. The shared integration handoff, including proposed feature/model interfaces, is in `docs/laptop2_integration.md` at the repository root.
 
-No trips, predictions, or metrics are fabricated. Until Laptop 1 provides the endpoints below, the UI shows its connection screen. The full timeout for a slow prediction is 120 seconds after connection.
+No trips, predictions, or metrics are fabricated. Until Laptop 1 provides the endpoints below, the UI shows its connection screen. The full timeout for a slow prediction is 600 seconds after connection (large evaluator road networks can take about a minute).
 
 ## Proposed API contract — agree with backend owner
 

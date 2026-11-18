@@ -47,3 +47,7 @@ results/plots/*
 # Generated handoff archive and large feature tables
 handoff/*.zip
 data/processed/
+
+# Evaluator-testing partition: never commit (ground truth stays local, server-side only)
+evaluator_test/
+evaluator_test.zip

@@ -25,7 +25,7 @@ def request_api(base, method, path, **kwargs):
     if not valid_address:
         raise APIError("Enter a complete API address, such as http://192.168.1.20:8000.")
     try:
-        response = requests.request(method, base.rstrip("/") + path, timeout=(5, 120), **kwargs)
+        response = requests.request(method, base.rstrip("/") + path, timeout=(5, 600), **kwargs)
         response.raise_for_status()
         return response.json()
     except requests.Timeout as exc:
